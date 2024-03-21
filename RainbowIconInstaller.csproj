@@ -36,9 +36,6 @@
     <Reference Include="FlatUI">
       <HintPath>C:\Users\adamp\source\repos\Cobrax\Cobrax\bin\Debug\FlatUI.dll</HintPath>
     </Reference>
-    <Reference Include="Octokit, Version=10.0.0.0, Culture=neutral, PublicKeyToken=0be8860aee462442, processorArchitecture=MSIL">
-      <HintPath>packages\Octokit.10.0.0\lib\netstandard2.0\Octokit.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -72,7 +69,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
