@@ -54,6 +54,7 @@ namespace RainbowIconInstaller
                     label1.Text = "Geometry Dash Found";
                     label1.ForeColor = Color.LightGreen;
                     MessageBox.Show(FBD.SelectedPath, "Geometry Dash Folder", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    label3.Text = FBD.SelectedPath;
                 }
                 else
                 {
@@ -71,12 +72,35 @@ namespace RainbowIconInstaller
                 string modJson = File.ReadAllText(path);
                 // Find the version value
                 string version = modJson.Split(new string[] { "\"version\":" }, StringSplitOptions.None)[1].Split(',')[0];
+                // Remove the quotes
+                version = version.Replace("\"", "");
+                // Update the label
                 label2.Text = "Actual version of the mod : " + version;
             }
             else
             {
                 MessageBox.Show("Mod not found", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            // If the user didn't select the Geometry Dash folder
+            if (label1.Text != "Geometry Dash Found")
+            {
+                MessageBox.Show("Please select the Geometry Dash folder", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            // Mod path
+            string modPath = "\\geode\\mods\\saumondeluxe.rainbow_icon.geode";
+            string path = label3.Text + modPath;
+
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
